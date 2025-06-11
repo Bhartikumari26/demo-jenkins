@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  -name: 'prog9'
+  -name: 'agent'
 
 steps:
 - task: Maven@3
