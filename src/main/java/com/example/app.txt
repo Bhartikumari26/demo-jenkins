@@ -1,0 +1,16 @@
+- name: deploy jar
+  hosts: local
+  become: true
+
+  tasks:
+    - name: copy jar
+      copy:
+        src: /mnt/c/ProgramData/Jenkins/.jenkins/workspace/newproject/target/myapp-1.0-SNAPSHOT.jar
+        dest: /mnt/c/Users/Admin/Desktop/demo-jenkins-1.0-SNAPSHOT.jar
+        mode: 0755
+
+    - name: Run jar
+      shell: nohup java -jar /mnt/c/Users/Admin/Desktop/demo-jenkins-1.0-SNAPSHOT.jar > app.log 2>&1 &
+
+
+
